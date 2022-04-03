@@ -15,14 +15,8 @@ Select saleDate, CONVERT(Date,SaleDate)
 From NashvilleHousing
 
 
-Update NashvilleHousing
-SET SaleDate = CONVERT(Date,SaleDate)
-
-
----- If it doesn't Update properly
-
---ALTER TABLE NashvilleHousing
---Add SaleDateConverted Date;
+ALTER TABLE NashvilleHousing
+Add SaleDateConverted Date;
 
 Update NashvilleHousing
 SET SaleDateConverted = CONVERT(Date,SaleDate)
@@ -205,9 +199,6 @@ Order by SaleDate
 
 
 
---Select *
---From NashvilleHousing
 
-
---ALTER TABLE NashvilleHousing
---DROP COLUMN OwnerAddress, TaxDistrict, PropertyAddress, SaleDate
+ALTER TABLE NashvilleHousing
+DROP COLUMN OwnerAddress, TaxDistrict, PropertyAddress, SaleDate
