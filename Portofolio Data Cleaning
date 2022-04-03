@@ -8,21 +8,15 @@ from NashvilleHousing
 
 --------------------------------------------------------------------------------------------------------------------------
 
----- Standardize Date Format
+-- Standardize Date Format
 
 
 Select saleDate, CONVERT(Date,SaleDate)
 From NashvilleHousing
 
 
-Update NashvilleHousing
-SET SaleDate = CONVERT(Date,SaleDate)
-
-
----- If it doesn't Update properly
-
---ALTER TABLE NashvilleHousing
---Add SaleDateConverted Date;
+ALTER TABLE NashvilleHousing
+Add SaleDateConverted Date;
 
 Update NashvilleHousing
 SET SaleDateConverted = CONVERT(Date,SaleDate)
@@ -31,7 +25,7 @@ SET SaleDateConverted = CONVERT(Date,SaleDate)
 
 -- --------------------------------------------------------------------------------------------------------------------------
 
----- Populate Property Address data
+-- Populate Property Address data
 
 Select *
 From NashvilleHousing
@@ -60,7 +54,7 @@ Where a.PropertyAddress is null
 
 ----------------------------------------------------------------------------------------------------------------------------
 
----- Breaking out Address into Individual Columns (Address, City, State)
+-- Breaking out Address into Individual Columns (Address, City, State)
 
 
 Select PropertyAddress
@@ -205,9 +199,5 @@ Order by SaleDate
 
 
 
---Select *
---From NashvilleHousing
-
-
---ALTER TABLE NashvilleHousing
---DROP COLUMN OwnerAddress, TaxDistrict, PropertyAddress, SaleDate
+ALTER TABLE NashvilleHousing
+DROP COLUMN OwnerAddress, TaxDistrict, PropertyAddress, SaleDate
